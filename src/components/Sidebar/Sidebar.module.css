@@ -1,5 +1,5 @@
 .sidebar {
-  background: #1e1e1f;
+  background: rgb(30, 30, 31);
   border-radius: 20px;
   padding: 2rem;
   width: 22vw;
@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -22,7 +23,7 @@
 }
 
 .avatar {
-  width: 10rem;
+  width: clamp(6rem, 8vw, 10rem);
   height: auto;
   border-radius: 50%;
   object-fit: cover;
@@ -40,7 +41,7 @@
 
 .name {
   color: #fff;
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
   font-weight: 600;
   margin: 0 0 0.5rem 0;
   letter-spacing: -0.5px;
@@ -49,7 +50,7 @@
 .title {
   background: #2b2b2c;
   color: #fff;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
   font-weight: 300;
   padding: 0.5rem 1.25rem;
   border-radius: 8px;
@@ -63,7 +64,7 @@
   background: transparent;
   border: none;
   color: #ffdb70;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
   font-weight: 500;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
@@ -133,7 +134,7 @@
 
 .contactTitle {
   color: #d4d4d4;
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 1.0vw, 0.85rem);
   text-transform: uppercase;
   margin: 0 0 0.25rem 0;
   letter-spacing: 0.5px;
@@ -141,7 +142,7 @@
 
 .contactLink {
   color: #fff;
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
   text-decoration: none;
   transition: color 0.3s ease;
   display: block;
@@ -172,6 +173,10 @@
     max-width: 100%;
     position: static;
   }
+
+  .sidebarInfo {
+    flex-direction: row;
+  }
   
 }
 
@@ -184,10 +189,26 @@
 
   .avatar {
     width: 120px;
-    height: 120px;
+    height: auto;
+  }
+  .sidebar {
+    position: relative;
+    margin-bottom: 1rem;
   }
 
-  .name {
-    font-size: 1.5rem;
+  .infoMoreBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .name{
+    font-size: small;
+  }
+
+  .title {
+    font-size: 0.65rem;
   }
 }

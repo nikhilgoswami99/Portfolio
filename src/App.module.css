@@ -1,6 +1,6 @@
 .app {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   width: 100vw;
   margin: 0 auto;
   padding: 4rem;
@@ -13,17 +13,16 @@
 }
 
 .navbar {
-  background: #1e1e1f;
+  background: rgb(30, 30, 31);
+
   border-radius: 20px;
   padding: 0;
-  margin-bottom: 2rem;
   border: 1px solid rgb(56, 56, 56);
 }
 
 .navList {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -32,7 +31,7 @@
 
 .navList li {
   flex: 1;
-  min-width: 100px;
+  min-width: clamp(56px, 8vw, 140px);
 }
 
 .navLink {
@@ -40,8 +39,8 @@
   background: transparent;
   border: none;
   color: #d4d4d4;
-  padding: 1.25rem 1rem;
-  font-size: 1rem;
+  padding: clamp(0.6rem, 1.2vw, 1.25rem) clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -57,7 +56,6 @@
   color: #ffdb70;
 }
 
-
 .contentArea {
   background: #1e1e1f;
   border-radius: 20px;
@@ -69,7 +67,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -81,24 +79,33 @@
   .app {
     flex-direction: column;
     padding: 1.5rem;
+    width: 90vw;
+    margin-bottom: 4rem;
   }
 
   .contentArea {
     padding: 2rem;
+  }
+
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: rgba(68, 68, 68, 0.5);
+    backdrop-filter: blur(10px);
   }
 }
 
 @media (max-width: 640px) {
   .app {
     padding: 1rem;
-  }
-
-  .navbar {
-    border-radius: 15px;
-  }
-
-  .navList {
-    flex-direction: column;
+    width: 100vw;
+    gap: 2rem;
+    margin-bottom: 4.5rem;
   }
 
   .navList li {
@@ -106,12 +113,20 @@
   }
 
   .navLink {
-    padding: 1rem;
+    padding: clamp(0.6rem, 2.5vw, 1rem);
     text-align: left;
   }
 
   .contentArea {
     padding: 1.5rem;
     border-radius: 15px;
+  }
+}
+
+/* Desktop Responsiveness */
+
+@media (min-width: 1025px) {
+  .navbar {
+    margin-bottom: 1rem;
   }
 }

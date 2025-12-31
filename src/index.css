@@ -15,6 +15,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  position: relative;
 }
 
 /* Prevent any remaining horizontal overflow at the root */
@@ -23,7 +24,7 @@ html, body {
 }
 
 /* Ensure media elements don't exceed their containers */
-img, picture, video, iframe {
+img, picture, video{
   max-width: 100%;
   height: auto;
   display: block;
