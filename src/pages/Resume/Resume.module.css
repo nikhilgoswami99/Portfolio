@@ -1,0 +1,128 @@
+.resume {
+  animation: fadeIn 0.5s ease;
+  overflow-x: hidden;
+}
+
+.title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 2rem 0;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 5px;
+  background: linear-gradient(to right, #ffdb70, #ff9a3c);
+  border-radius: 3px;
+}
+
+.timeline {
+  margin-bottom: 3rem;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconBox {
+  background: linear-gradient(to bottom right, #ffdb70, #ff9a3c);
+  color: #1e1e1f;
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timelineTitle {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.timelineList {
+  list-style: none;
+  padding: 0 0 0 3rem;
+  margin: 0;
+  position: relative;
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(to bottom right, #ffdb70, #ff9a3c);
+  border-radius: 50%;
+  border: 3px solid #1e1e1f;
+  box-shadow: 0 0 0 4px #383838;
+  transform: translateX(-2.5rem);
+}
+
+.timelineItemTitle {
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.timelinePeriod {
+  color: #ffdb70;
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.timelineText {
+  color: #d4d4d4;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .timelineList {
+    padding-left: 2rem;
+  }
+
+  .timelineItem::before {
+    left: 0;
+    transform: translateX(-1.5rem);
+  }
+}
