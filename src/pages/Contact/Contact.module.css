@@ -117,6 +117,10 @@ textarea.formInput {
   .formBtn {
     width: 100%;
   }
+
+  .formInput {
+    width: 100%;
+  }
 }
 
 /* helper text and validation */
