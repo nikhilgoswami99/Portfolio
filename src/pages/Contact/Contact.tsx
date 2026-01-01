@@ -29,7 +29,7 @@ const Contact = () => {
       </header>
 
       <section className={styles.contactForm}>
-        <h3 className={styles.formTitle}>Contact Form</h3>
+        {/* <h3 className={styles.formTitle}>Contact Form</h3> */}
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputWrapper}>
