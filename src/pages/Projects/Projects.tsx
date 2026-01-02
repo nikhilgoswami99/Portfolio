@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Eye } from 'lucide-react';
-import styles from './Portfolio.module.css';
+import styles from './Projects.module.css';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');

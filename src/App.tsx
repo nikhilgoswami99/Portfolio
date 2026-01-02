@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Sidebar from './components/Sidebar/Sidebar';
 import About from './pages/About/About';
 import Resume from './pages/Resume/Resume';
-import Portfolio from './pages/Portfolio/Portfolio';
+import Projects from './pages/Projects/Projects';
 // import Blog from './pages/Blog/Blog';
 import Contact from './pages/Contact/Contact';
 import styles from './App.module.css';
@@ -63,7 +63,7 @@ function App() {
         <div className={styles.contentArea}>
           {activeNav === 'home' && <About />}
           {activeNav === 'resume' && <Resume />}
-          {activeNav === 'projects' && <Portfolio />}
+          {activeNav === 'projects' && <Projects />}
           {/* {activeNav === 'blog' && <Blog />} */}
           {activeNav === 'contact' && <Contact />}
         </div>
