@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
 
 const Contact = () => {
@@ -8,9 +9,34 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | "">("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+    setStatus("");
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          fullname: formData.fullname,
+          email: formData.email,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus("success");
+      setFormData({ fullname: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -29,8 +55,6 @@ const Contact = () => {
       </header>
 
       <section className={styles.contactForm}>
-        {/* <h3 className={styles.formTitle}>Contact Form</h3> */}
-
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputWrapper}>
             <input
@@ -63,9 +87,19 @@ const Contact = () => {
             onChange={handleChange}
           ></textarea>
 
-          <button type="submit" className={styles.formBtn}>
-            <span>Send Message</span>
+          <button type="submit" className={styles.formBtn} disabled={loading}>
+            <span>{loading ? "Sending..." : "Send Message"}</span>
           </button>
+
+          {status === "success" && (
+            <p className={styles.success}>Message sent successfully!</p>
+          )}
+
+          {status === "error" && (
+            <p className={styles.error}>
+              Something went wrong. Please try again.
+            </p>
+          )}
         </form>
       </section>
     </article>
