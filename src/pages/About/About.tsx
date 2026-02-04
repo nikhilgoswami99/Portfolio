@@ -4,28 +4,29 @@ import styles from "./About.module.css";
 const About = () => {
   const services = [
     {
-      icon: <Code size={40} />,
-      title: "Frontend Development",
+      icon: <LayoutPanelTop size={40} />,
+      title: "UI Development",
       description:
-        "High-quality development of sites at the professional level.",
+        "Building clean, responsive, and pixel-perfect user interfaces using modern frontend technologies.",
+    },
+    {
+      icon: <Code size={40} />,
+      title: "React Development",
+      description:
+        "Developing scalable and maintainable React applications with reusable components and clean architecture.",
     },
     {
       icon: <Smartphone size={40} />,
-      title: "Mobile Applications",
+      title: "Responsive Design",
       description:
-        "Professional development of applications for iOS and Android.",
+        "Creating fully responsive layouts that work smoothly across mobile, tablet, and desktop devices.",
     },
     {
       icon: <Server size={40} />,
-      title: "Backend Development",
-      description: "Building robust and scalable server-side applications.",
+      title: "Performance Optimization",
+      description:
+        "Optimizing frontend applications for speed, accessibility, and better user experience.",
     },
-{
-  icon: <LayoutPanelTop size={40} />,
-  title: 'UI / UX Design',
-  description: 'Designing clean, intuitive, and user-friendly interfaces.'
-}
-
   ];
 
   return (
@@ -36,16 +37,13 @@ const About = () => {
 
       <section className={styles.aboutText}>
         <p>
-          I'm a Software Engineer specializing in building modern, scalable web
-  applications using React, JavaScript, and backend technologies. I enjoy
-  solving complex problems and turning ideas into clean, efficient, and
-  user-friendly digital solutions.
+          I’m a Software Engineer specializing in building modern, scalable web
+          interfaces using React and JavaScript. I enjoy solving complex
+          problems and turning ideas into clean, efficient, and user-friendly
+          digital experiences.
         </p>
         <p>
-   I build responsive, user-friendly interfaces with attention to performance
-  and usability. From translating requirements into reusable UI components to
-  integrating backend services, I aim to create seamless digital experiences
-  that add real value to users.
+        I focus on crafting responsive, high-performance interfaces with strong attention to usability and design. From translating product requirements into reusable UI components to integrating APIs and managing frontend state, I aim to build seamless experiences that deliver real value to users.
         </p>
       </section>
 

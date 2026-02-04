@@ -1,6 +1,6 @@
 .app {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100vw;
   margin: 0 auto;
   padding: 4rem;
@@ -10,46 +10,52 @@
 .mainContent {
   flex: 1;
   min-width: 0;
-  border-radius: 10px;
+  border-radius: 20px;
+  position: relative;
 }
 
 .navbar {
-  background: rgb(30, 30, 31);
-  border-radius: 10px;
-  padding: 0;
-  border: 1px solid rgb(56, 56, 56);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(43, 43, 44, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 0 20px 0 20px;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgb(56, 56, 56);
+  border-left: 1px solid rgb(56, 56, 56);
+  z-index: 10;
 }
 
 .navList {
   list-style: none;
-  padding: 1rem;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .navList li {
-  flex: 1;
-  min-width: clamp(56px, 8vw, 140px);
+  display: inline-block;
 }
 
 .navLink {
-  width: 100%;
   background: transparent;
   border: none;
   color: #d4d4d4;
-  padding: clamp(0.6rem, 1.2vw, 1.25rem) clamp(0.8rem, 1.5vw, 1rem);
-  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
-  font-weight: bold;
+  padding: 1.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   position: relative;
   text-transform: capitalize;
 }
 
 .navLink:hover {
-  color: #888686;
+  color: #ffdb70;
 }
 
 .navLink.active {
@@ -58,10 +64,13 @@
 
 .contentArea {
   background: #1e1e1f;
-  border-radius: 10px;
-  padding: 3rem;
+  border-radius: 20px;
+  padding: 2rem;
+  padding-top: 5rem; /* Space for absolute navbar */
   animation: fadeIn 0.5s ease;
   border: 1px solid rgb(56, 56, 56);
+  min-height: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes fadeIn {
@@ -87,16 +96,32 @@
     padding: 2rem;
   }
 
+  /* Keep basic fixed navbar on tablet/mobile but ensure styles match */
   .navbar {
     position: fixed;
     bottom: 0;
+    top: auto;
     right: 0;
     left: 0;
     z-index: 100;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    background: rgba(68, 68, 68, 0.5);
-    backdrop-filter: blur(10px);
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    border-left: none;
+    border-top: 1px solid rgb(56, 56, 56);
+    background: rgba(43, 43, 44, 0.9);
+    padding: 0.75rem;
+    width: 100vw;
+  }
+  
+  .navList {
+    justify-content: space-around;
+    gap: 0;
+    width: 100%;
+  }
+
+  .navLink {
+    padding: 0.5rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -108,25 +133,12 @@
     margin-bottom: 4.5rem;
   }
 
-  .navList li {
-    width: 100%;
-  }
-
-  .navLink {
-    padding: clamp(0.6rem, 2.5vw, 1rem);
-    text-align: left;
-  }
-
   .contentArea {
     padding: 1.5rem;
     border-radius: 10px;
   }
 }
 
-/* Desktop Responsiveness */
 
-@media (min-width: 1025px) {
-  .navbar {
-    margin-bottom: 1rem;
-  }
-}
+
+
