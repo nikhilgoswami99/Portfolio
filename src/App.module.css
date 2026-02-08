@@ -10,7 +10,7 @@
 .mainContent {
   flex: 1;
   min-width: 0;
-  border-radius: 20px;
+  border-radius: 10px;
   position: relative;
 }
 
@@ -20,7 +20,7 @@
   right: 0;
   background: rgba(43, 43, 44, 0.7);
   backdrop-filter: blur(10px);
-  border-radius: 0 20px 0 20px;
+  border-radius: 0 10px 0 20px;
   padding: 0 2rem;
   border-bottom: 1px solid rgb(56, 56, 56);
   border-left: 1px solid rgb(56, 56, 56);
@@ -64,7 +64,7 @@
 
 .contentArea {
   background: #1e1e1f;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 2rem;
   padding-top: 5rem; /* Space for absolute navbar */
   animation: fadeIn 0.5s ease;
