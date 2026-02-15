@@ -1,26 +1,35 @@
 
 import { Eye, Github } from 'lucide-react';
 import styles from './Projects.module.css';
-import jobPortalImg from '../../assets/job_portal.png';
+// import jobPortalImg from '../../assets/job_portal.png';
 import fitnessTrackerImg from '../../assets/fitness_tracker.png';
+import bookmarkManagerImg from '../../assets/bookmark-manager.png';
 
 const Portfolio = () => {
   const projects = [
-    {
-      title: 'Job Portal',
-      image: jobPortalImg,
-      description: 'A comprehensive job portal platform connecting employers with job seekers.',
-      features: ['Job Listings', 'Application Tracking', 'User Profiles', 'Search & Filters'],
-      githubLink: 'https://github.com/yourusername/job-portal',
-      hostedLink: 'https://job-portal-demo.com'
-    },
+    // {
+    //   title: 'Job Portal',
+    //   image: jobPortalImg,
+    //   description: 'A comprehensive job portal platform connecting employers with job seekers.',
+    //   features: ['Job Listings', 'Application Tracking', 'User Profiles', 'Search & Filters'],
+    //   githubLink: 'https://github.com/yourusername/job-portal',
+    //   hostedLink: 'https://job-portal-demo.com'
+    // },
     {
       title: 'Fitness Tracker',
       image: fitnessTrackerImg,
       description: 'Track your fitness journey with workout plans, progress monitoring, and health insights.',
       features: ['Workout Plans', 'Progress Tracking', 'Calorie Counter', 'Exercise Library'],
-      githubLink: 'https://github.com/yourusername/fitness-tracker',
-      hostedLink: 'https://fitness-tracker-demo.com'
+      githubLink: 'https://github.com/nikhilgoswami99/Fitness-Website/tree/main/Fit_Fusion',
+      hostedLink: 'https://fitness-website-nikhil-goswamis-projects.vercel.app/login'
+    },
+    {
+      title: 'Bookmark Management System',
+      image: bookmarkManagerImg,
+      description: 'A streamlined platform to organize, save, and manage your favorite web links with ease.',
+      features: ['Categorization', 'Search Functionality', 'Delete Management', 'Responsive Design'],
+      githubLink: 'https://github.com/nikhilgoswami99/Bookmark-Management-System',
+      hostedLink: 'https://bookmark-management-system-nikhil-goswamis-projects.vercel.app/'
     }
   ];
 
