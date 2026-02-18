@@ -18,7 +18,7 @@ const Resume = () => {
   const experience = [
     {
       title: 'Innovaneers Technologies',
-      period: '2025 Jan - 2025 Dec',
+      period: '2025 Feb - 2026 Jan',
       description: 'I built and maintained small to medium-scale client websites using HTML, CSS, JavaScript, and React.js, focusing on clean architecture and modern UI practices. I developed responsive, mobile-first interfaces and optimized layouts to ensure smooth performance across devices. Based on client requirements, I implemented functional features such as working forms, WhatsApp integration, and basic API connections. Each project was delivered as a production-ready website with maintainable code, basic SEO optimization, and end-to-end deployment.'
     }
   ];
